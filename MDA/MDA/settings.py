@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'multi_email_field',
     'widget_tweaks',
-    'Coupons.apps.CouponsConfig'
+    'Coupons.apps.CouponsConfig',
     
 ]
 
@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'socius1',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': 'rajneesh94',
         'HOST': 'localhost',
     }
 }

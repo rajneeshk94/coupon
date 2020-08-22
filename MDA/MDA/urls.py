@@ -32,9 +32,9 @@ urlpatterns = [
     path('joindirectory',v.joindirectory,name="joindirectory"),
     path('accounts/',include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('',include('Coupons.urls')),
     path('adduser/',v.simple_upload,name='simple_upload'),
     path('active/<uidb64>/<token>/',v.active, name='active'),
-    path('',include('Coupons.urls')),
     
 ]
 

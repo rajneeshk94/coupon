@@ -1,26 +1,18 @@
 from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django import forms
+from django.conf import settings
+from .models import Coupon_SU
 
-from .models import (CouponSU, CouponAdmin, ReferralforMember)
+class DateInput(forms.DateInput):
+    input_type = "date"
+    input_formats = "dd/mm/yyyy"
 
 
-# Form generation for Super User level coupon code
-class Coupon_code_SU(ModelForm):
+class Coupon_code_SU_(ModelForm):
+    
+    valid_from = forms.DateField(widget=DateInput)
+    valid_till = forms.DateField(widget=DateInput)
     class Meta:
-        model = CouponSU
-        fields = "__all__"
-
-
-# Form generation for Admin level coupon code
-class Coupon_code_Admin(ModelForm):
-    class Meta:
-        model = CouponAdmin
-        fields = "__all__"
-
-
-# Form generation for Member level Referral code
-class Referral_code_Members(ModelForm):
-    class Meta:
-        model = ReferralforMember
+        model = Coupon_SU
         fields = "__all__"
